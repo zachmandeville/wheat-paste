@@ -4,7 +4,7 @@ const created = require('./created')
 const form = require('./form')
 
 module.exports = (state, emit) => {
-  console.log({emit})
+  //if there's no event yet, show the form.  Otherwise, show the event details.
   return (state.event.name == '' ? showForm(state, emit) : showEvent(state, emit))
 
   function showEvent(state){
@@ -16,7 +16,6 @@ module.exports = (state, emit) => {
   }
 
   function showForm(state, emit){
-    console.log({secondEmit: emit})
     return html`
       <div>
         ${form(state, emit)}

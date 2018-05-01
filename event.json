@@ -7,3 +7,7 @@
   "description": "Yee haw! Git yerself a pardner and ho on down.",
   "notes": "BYO spoons."
 }
+//We have everything but name filled out so we can test our ternary oprator on views/main.js.  
+//If you hardcode a name, you'll see that going onto the app shows you a simple event page.  
+//If the name is missing, then we'll show you a form. Ultimately, we'd want this to be empty, 
+//and the details are filled out once in the act of making the form. 

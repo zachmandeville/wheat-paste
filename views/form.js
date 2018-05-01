@@ -4,10 +4,8 @@ const html = require('choo/html')
 module.exports = form
 
 function form (state, emit) {
-  console.log({thirdEmit: emit})
   return html`
   <div>
-  <h1> hi</h1>
     <form id='eventForm' onsubmit=${onsubmit}>
       <label for='name'>What is the Name of your event?</label>
       <input id='name' name='name' type='text' placeholder='event name'required pattern='.{1,250}' title="please enter something here.  Anything."/>
@@ -27,12 +25,12 @@ function form (state, emit) {
     </form>
   </div>
   `
+//when the form is submitted, prevent the site from refreshing, bundle up the entire form data as a
+//variable, and emit that variable to your store.
   function onsubmit (e) {
     e.preventDefault()
-    console.log({fourthEmit: emit})
     var form = e.currentTarget
     emit('submitForm', form)
-   
   }
 }
 
