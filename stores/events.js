@@ -1,5 +1,6 @@
 module.exports = store
 
 function store(state, emitter){
-state.events = 'fun event'
+const event = require('../event.json')
+state.event = event.event
 }
