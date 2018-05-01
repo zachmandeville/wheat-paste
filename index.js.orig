@@ -1,0 +1,29 @@
+//outdoor modules
+const choo = require('choo')
+const html = require('choo/html')
+//indoor modules
+const main = require('./views/main')
+<<<<<<< HEAD
+const form = require('./views/form')
+
+=======
+const created = require('./views/created')
+>>>>>>> 3842421135f71d750d6dab2f42a49f9e7f93ebed
+//initialise choo
+const app = choo()
+
+if (process.env.NODE_ENV !== 'production'){
+  app.use(require('choo-devtools')())
+} else {
+  app.use(require('choo-service-worker')())
+}
+
+app.use(require('./stores/events'))
+
+app.route('/', main)
+<<<<<<< HEAD
+app.route('#form', form)
+=======
+app.route('/created', created)
+>>>>>>> 3842421135f71d750d6dab2f42a49f9e7f93ebed
+app.mount('div')
