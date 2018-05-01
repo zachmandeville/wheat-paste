@@ -1,0 +1,44 @@
+
+body {
+    background-color: peachpuff;
+    cursor: url("./lickyboy.png"), auto;
+}
+
+@font-face {
+  font-family: "Bebas Neue";
+  src: url("./bebas_neue/BebasNeue-Regular.ttf");
+  }
+
+.image {
+  width: 60%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  border-radius: 1.25%;
+}
+
+.name {
+  text-align: center;
+  font-family: 'Bebas Neue';
+}
+
+.location {
+    text-align: center;
+}
+
+.date {
+    text-align: center;
+}
+
+.time {
+    text-align: center;
+}
+
+.description {
+    text-align: center;
+}
+
+.notes {
+    text-align: center;
+}
