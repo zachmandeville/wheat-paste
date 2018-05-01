@@ -5,6 +5,7 @@ const html = require('choo/html')
 const main = require('./views/main')
 const form = require('./views/form')
 
+const created = require('./views/created')
 //initialise choo
 const app = choo()
 
@@ -18,4 +19,5 @@ app.use(require('./stores/events'))
 
 app.route('/', main)
 app.route('#form', form)
+app.route('/created', created)
 app.mount('div')
