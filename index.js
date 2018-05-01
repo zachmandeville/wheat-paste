@@ -3,6 +3,8 @@ const choo = require('choo')
 const html = require('choo/html')
 //indoor modules
 const main = require('./views/main')
+const form = require('./views/form')
+
 const created = require('./views/created')
 //initialise choo
 const app = choo()
@@ -16,5 +18,7 @@ if (process.env.NODE_ENV !== 'production'){
 app.use(require('./stores/events'))
 
 app.route('/', main)
+
 app.route('/#created-event', created)
+
 app.mount('div')
