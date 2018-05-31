@@ -1,4 +1,4 @@
-# Dathering: gatherings for solarpunks
+# Wheat-Paste: gatherings for solarpunks
 
 This is a simple dat site to create single page events to share with your friends.  These event page will be written in the [h-event microformat](http://microformats.org/wiki/h-calendar), so they can be quickly and easily added to anyone's calendar app of choice (when we figure out how to parse the html of a page looking for an h-event, and convert it to a downloadable .ics).
 
