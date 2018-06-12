@@ -1,4 +1,3 @@
-const choo = require('choo')
 const html = require('choo/html')
 
 module.exports = form
@@ -25,12 +24,10 @@ function form (state, emit) {
     </form>
   </div>
   `
-//when the form is submitted, prevent the site from refreshing, bundle up the entire form data as a
-//variable, and emit that variable to your store.
+// When the form is submitted, prevent the site from refreshing, bundle up the entire form data as a variable, and emit that variable to your store.
   function onsubmit (e) {
     e.preventDefault()
     var form = e.currentTarget
     emit('submitForm', form)
   }
 }
-

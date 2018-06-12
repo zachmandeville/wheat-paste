@@ -1,5 +1,5 @@
 {
-  "name": "dathering",
+  "name": "Wheat-Paste",
   "version": "1.0.0",
   "description": "This is a simple dat site to create single page events to share with your friends.  These events are written in the [h-event microformat](http://microformats.org/wiki/h-calendar), so they can be quickly and easily added to anyone's calendar app of choice.",
   "main": "index.js",
@@ -21,7 +21,7 @@
   "homepage": "https://github.com/zachmandeville/dathering#readme",
   "devDependencies": {
     "browserify": "^16.2.0",
-    "budo": "^11.2.0",
+    "budo": "^11.2.2",
     "choo": "^6.11.0-preview1",
     "tinyify": "^2.4.0"
   },
