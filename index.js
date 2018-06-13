@@ -14,11 +14,11 @@ if (process.env.NODE_ENV !== 'production') {
   app.use(require('choo-service-worker')())
 }
 
-// set the state of the app using the functions within stores/events
+// set the state of the app using the functions within our stores directory
 app.use(require('./stores/party'))
 
-// use views/main when people go to root site
+// set the first view someone sees when going onto the site.
 app.route('/', main)
 
-// plant that choo seed
+// plant that choo seed.
 app.mount('div')

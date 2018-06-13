@@ -5,12 +5,10 @@ var archive = new DatArchive(window.location.host)
 function store (state, emitter) {
   // populate the state of the app with the values in  your event.json file.
   emitter.on('DOMContentLoaded', function () {
-    archive.readFile('party.json')
-      .then((party) => {
-        state.party = JSON.parse(party)
-        emitter.emit('replaceState')
-      })
+    renderPartyDetails(state, emitter)
+    renderImages()
   })
+
   emitter.on('submitForm', function (form) {
     var body = getFormData(form)
     var string = JSON.stringify(body, null, 2)
@@ -33,4 +31,16 @@ function getFormData (form) {
     data[pair[0]] = pair[1]
   }
   return data
+}
+
+function renderPartyDetails (state, emitter) {
+  archive.readFile('party.json')
+    .then((party) => {
+      state.party = JSON.parse(party)
+      emitter.emit('render')
+    })
+}
+
+function renderImages () {
+  console.log('image dog')
 }
