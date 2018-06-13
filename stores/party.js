@@ -1,3 +1,5 @@
+var _ = require('lodash')
+
 module.exports = store
 
 var archive = new DatArchive(window.location.host)
@@ -6,7 +8,6 @@ function store (state, emitter) {
   // populate the state of the app with the values in  your event.json file.
   emitter.on('DOMContentLoaded', function () {
     renderPartyDetails(state, emitter)
-    renderImages()
   })
 
   emitter.on('submitForm', function (form) {
@@ -21,6 +22,9 @@ function store (state, emitter) {
       .catch((err) => {
         console.log('oh fuck', err)
       })
+  })
+  emitter.on('party!', function () {
+    renderImages()
   })
 }
 function getFormData (form) {
@@ -42,5 +46,27 @@ function renderPartyDetails (state, emitter) {
 }
 
 function renderImages () {
-  console.log('image dog')
+  renderCoverImage()
+}
+
+function renderCoverImage () {
+  archive.readdir('assets/cover-image')
+    .then(dir => {
+      var imageFile = dir[0]
+      dir.length > 0 && isImage(imageFile)
+        ? makeCoverImage(imageFile)
+        : console.log('no files')
+    })
+}
+
+function isImage (file) {
+  var imageExtensions = ['jpg', 'png', 'gif']
+  var fileExtension = file.split('.').pop()
+  return _.findIndex(imageExtensions, fileExtension)
+}
+
+function makeCoverImage (image) {
+  var imagePath = `assets/cover-image/${image}`
+  var coverImage = document.getElementById('cover-image')
+  coverImage.src = imagePath
 }
