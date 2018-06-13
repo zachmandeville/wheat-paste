@@ -46,16 +46,17 @@ function renderPartyDetails (state, emitter) {
 }
 
 function renderImages () {
-  renderCoverImage()
+  renderImage('cover-image')
+  renderImage('background-image')
 }
 
-function renderCoverImage () {
-  archive.readdir('assets/cover-image')
+function renderImage (section) {
+  archive.readdir(`assets/${section}`)
     .then(dir => {
       var imageFile = dir[0]
       dir.length > 0 && isImage(imageFile)
-        ? makeCoverImage(imageFile)
-        : console.log('no files')
+        ? assignImage(imageFile, section)
+        : console.log(`no files for ${section}`)
     })
 }
 
@@ -65,8 +66,13 @@ function isImage (file) {
   return _.findIndex(imageExtensions, fileExtension)
 }
 
-function makeCoverImage (image) {
-  var imagePath = `assets/cover-image/${image}`
-  var coverImage = document.getElementById('cover-image')
-  coverImage.src = imagePath
+function assignImage (image, section) {
+  var imagePath = `assets/${section}/${image}`
+  if (section === 'cover-image') {
+    var imageTag = document.getElementById(section)
+    imageTag.src = imagePath
+  } else {
+    console.log({imagePath})
+    document.body.style.backgroundImage = `url(${imagePath})`
+  }
 }
