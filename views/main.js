@@ -8,10 +8,10 @@ module.exports = (state, emit) => {
     ? showForm(state, emit)
     : showParty(state, emit))
 
-  function showParty (state) {
+  function showParty (state, emit) {
     return html`
     <div>
-    ${created(state)}
+    ${created(state, emit)}
     </div>
     `
   }
