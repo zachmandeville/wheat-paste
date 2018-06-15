@@ -1,3 +1,8 @@
+
+## PSA: WE HAVE MIGRATED TO GITLAB AS OF JUNE 2018. PLEASE VISIT THE BELOW LINK FOR THE UP TO DATE VERSION!! 
+
+https://gitlab.com/zachmandeville/wheat-paste
+
 # Wheat-Paste: gatherings for solarpunks
 
 This is an event maker designed as a Dat:// app and the cool party scene of the chorus.  It requires Beaker Browser to use.
