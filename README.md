@@ -1,7 +1,23 @@
 # Wheat-Paste: gatherings for solarpunks
 
-This is a simple dat site to create single page events to share with your friends.  These event page will be written in the [h-event microformat](http://microformats.org/wiki/h-calendar), so they can be quickly and easily added to anyone's calendar app of choice (when we figure out how to parse the html of a page looking for an h-event, and convert it to a downloadable .ics).
+This is an event maker designed as a Dat:// app and the cool party scene of the chorus.  It requires Beaker Browser to use.
 
-This is a short hack of a site to try out form making using [choo](https://choo.io) and [the beaker browser](https://beakerbrowser.com).  This repo should not be considered a useful tool in any way(yet).  It is just an excuse to practice things we wanna get better at.  
+## Install
 
-The format of the single page was largely inspired by the beautiful event,people, and page at https://shiftctrl.space
+First, get the repo onto yr computer:
+```
+git clone https://gitlab.com/zachmandeville/wheat-paste.git
+cd wheat-paste
+npm install
+npm run build
+```
+
+Then, install beaker browser here: https://beakerbrowser.com/
+
+In beaker, click `new site` then `import from folder` and find yr wheat-paste folder, and yr good!
+
+## Behind-the-Scenes
+
+This is still a hack of a site, for hte most part.  It's an experimental fun time and not 'usable'....YET.
+
+
