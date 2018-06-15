@@ -31,6 +31,7 @@
     "babelify": "^8.0.0",
     "choo-devtools": "^2.5.0",
     "choo-service-worker": "^2.4.0",
+    "ics": "^2.6.0",
     "watchify": "^3.11.0"
   }
 }

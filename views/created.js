@@ -3,22 +3,21 @@ const html = require('choo/html')
 module.exports = view
 
 function view (state, emit) {
-  return eventListing(state, emit)
-}
-function eventListing (state, emit) {
   emit('party!')
   return html`
-    <div>
-      <h1 class='name'>${state.party.name}</h1>
+    <div id='main-box' class="h-event vevent">
+      <h1 id="name" class="p-name">${state.party.name}</h1>
       <img id="cover-image" src="https://i.pinimg.com/originals/0e/f4/52/0ef4529efd255cf461396a502c322194.jpg"/>
-      <h3 class='location'>${state.party.location}</h3>
-      <h3 class='date'>${state.party.date}</h3>
-      <div class='time'>Begins: ${state.party.startTime}</div>
-      <div class='time'>Ends: ${state.party.endTime}</div>
-      <p class='description'>
+      <p id='date'>${state.party.date}</p>
+      <p id='summary' class=" p-summary summary">
       ${state.party.description}
       </p>
-      <h4 class='notes'>${state.party.notes}</h4>
+      <p id='location' class="p-location location">${state.party.location}</p>
+      <p id='time-begins' class="dt-start dtstart">Begins: ${state.party.startTime}</p>
+      <p id='time-ends' class="dt-end dtend">Ends: ${state.party.endTime}</p>
+      <h2>Additional Details:!</h2>
+      <p id='description' class="p-description description">${state.party.notes}</p>
+      <a download='party.json' href='party.json' target='blank'>download party</a>
     </div>
   `
 }

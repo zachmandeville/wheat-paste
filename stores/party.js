@@ -1,5 +1,7 @@
 var _ = require('lodash')
 
+var iFun = require('./ical')
+
 module.exports = store
 
 var archive = new DatArchive(window.location.host)
@@ -22,7 +24,9 @@ function store (state, emitter) {
       .catch((err) => {
         console.log('oh fuck', err)
       })
+    iFun()
   })
+
   emitter.on('party!', function () {
     renderImages()
   })
@@ -53,7 +57,7 @@ function renderImages () {
 function renderImage (section) {
   archive.readdir(`assets/${section}`)
     .then(dir => {
-      var imageFile = dir[0]
+      var imageFile = dir[Math.floor(Math.random() * dir.length)]
       dir.length > 0 && isImage(imageFile)
         ? assignImage(imageFile, section)
         : console.log(`no files for ${section}`)

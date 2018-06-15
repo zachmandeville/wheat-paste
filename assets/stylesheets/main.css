@@ -1,43 +1,47 @@
-
-body {
-    background-color: peachpuff;
-}
-
 @font-face {
   font-family: "Bebas Neue";
   src: url("../fonts/bebas_neue/BebasNeue-Regular.ttf");
+}
+
+body {
+  font-family: 'Bebas Neue';
+  font-size: 30px;
+}
+
+#main-box{
+  width: 70%;
+  background-color: lavender;
+  margin: auto;
+  border-radius: 5%;
+  text-align: center;
+}
+@media (max-width: 667px) {
+  #main-box {
+    width: 90%;
   }
+}
+
 
 #cover-image {
-  width: 60%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-  border-radius: 1.25%;
 }
 
-.name {
-  text-align: center;
-  font-family: 'Bebas Neue';
+#name {
+  font-size: 4em;
 }
 
-.location {
-    text-align: center;
+#location {
+  font-size: 2em;
+  color: purple;
 }
 
-.date {
-    text-align: center;
+#date {
 }
 
-.time {
-    text-align: center;
+#time {
 }
 
-.description {
-    text-align: center;
+#description {
 }
 
-.notes {
-    text-align: center;
+#summary {
 }
